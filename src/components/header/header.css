@@ -72,6 +72,14 @@ header {
     font-size: 1.3rem;
 }
 
+.header__socials > a {
+    color: var(--color-primary);
+}
+
+.header__socials > a:hover {
+    color: var(--color-bg-button);
+}
+
 .header__socials::after {
     content: "";
     width: 100%;
