@@ -1,54 +1,99 @@
 header {
-    height: 100vh;
+    height: 50vw;
     padding-top: 2.5rem;
     overflow: hidden;
 }
 
 .header__container {
-    text-align: center;
-    height: 100%;
+    height: max-content;
     position: relative;
 }
 
-/* =================== CTA ==================== */
-.cta {
-    margin-top: 2.5rem;
+.header__content {
+    margin-top: 3rem;
+    width: 100%;
+    position: absolute;
+}
+
+.name {
+    font-size: 4.78rem;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--color-text-bright);
+    line-height: 4rem;
     margin-bottom: 2.5rem;
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subheading {
+    width: 100%;
+    margin-right: 500px;
+    font-size: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 4rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subheading::before {
+    content: "";
+    margin-right: 50%;
+    height: 1px;
+    margin-bottom: 2.5rem;
+    background: var(--color-h1);
+    
+}
+
+.subheading1 {
+    color: var(--color-bg-button);
+    
+}
+
+.subheading2 {
+    color: #afa296;
+    
+}
+
+.subheading3 {
+    color: var(--color-bg-button);
+    
 }
 
 /* =================== Socials ==================== */
 .header__socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.8 rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    margin-right: 50%;
+    justify-content: center;
+    font-size: 1.3rem;
 }
 
 .header__socials::after {
     content: "";
-    width: 1px;
-    height: 2rem;
-    background: var(--color-primary);
+    width: 100%;
+    height: 1px;
+    background: var(--color-h1);
+}
+
+.header__socials::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: var(--color-h1);
 }
 
 /* =================== ME ==================== */
 .me {
-    background: linear-gradient( 
-      var(--color-primary), transparent);
-    width: 22rem;
-    height: 50rem;
+    /*background: linear-gradient( 
+      var(--color-h1), transparent);*/
+    width: 29rem;
+    right: -5rem;
     position: absolute;
-    left: calc(50% - 11rem);
-    margin-top: 2rem;
-    border-radius: 12rem 12rem 0 0;
     overflow: hidden;
-    padding: 3rem 0rem 0rem 0rem;
 }
 
 /* =================== SCROLL DOWN ==================== */
@@ -64,19 +109,61 @@ header {
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ============= */
 @media screen and (max-width: 1024px) {
     header {
-        height: 68vh;
+        height: 100vh;
+        align-content: center;
+        text-align: center;
     }
+
+    .header__container {
+        align-content: center;
+    }
+
+    .subheading::before {
+        content: "";
+        height: 1px;
+        margin: 0;
+        margin-bottom: 2rem;
+        background: var(--color-h1);
+        
+    }
+
+    .name {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .me {
+        /*background: linear-gradient( 
+          var(--color-h1), transparent);*/
+        left: 50%;
+        width: 20rem;
+        transform: translateX(-50%);
+        margin-top: 36rem;
+    }
+
+    .header__socials {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+        margin-right: 0%;
+        font-size: 1.3rem;
+    }
+
 }
 
 /* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
 @media screen and (max-width: 600px) {
     header {
-        height: 100vh;
+        height: 138vh;
+        align-content: center;
     }
 
-    .header__socials,
-    .scroll__down {
-        display: none;
+    .subheading {
+        text-align: center;
+    }
 
+    .me {
+        width: 15rem
     }
 }

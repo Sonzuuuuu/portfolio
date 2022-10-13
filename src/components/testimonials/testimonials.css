@@ -3,17 +3,34 @@
     padding-bottom: 4rem;
 }
 
+#testimonials > h5 {
+    margin-left: 171px;
+    margin-right: 171px;
+    text-align: center;
+    color: var(--color-h5);
+    font-size: 1rem;
+    margin-bottom: -10px;
+}
+
+#testimonials > h2 {
+    margin-left: 171px;
+    margin-right: 171px;
+    text-align: center;
+    color: var(--color-h2);
+    font-size: 3rem;
+}
+
 .client__avatar {
     width: 4rem;
     aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto 1rem;
-    border: 0.4rem solid var(--color-primary-variant);
+    border: 0.4rem solid var(--color-primary);
 }
 
 .testimonial {
-    background: var(--color-bg-variant);
+    background: var(--color-bg-card);
     text-align: center;
     padding: 2rem;
     border-radius: 2rem;
@@ -21,15 +38,16 @@
 }
 
 .client__name {
-    color: var(--color-primary);
+    color: var(--color-text-button);
 }
 
 .client__position {
     font-size: 0.7rem;
+    color: var(--color-light);
 }
 
 .client__review {
-    color: var(--color-light);
+    color: var(--color-text-button);
     font-weight: 300;
     display: block;
     width: 80%;
@@ -37,7 +55,11 @@
 }
 
 .swiper-pagination-bullet-clickable .swiper-pagination-bullet {
-    background: var(--color-primary-variant);
+    background: var(--color-bg-card);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-bg-card) !important;
 }
 
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ============= */
@@ -55,5 +77,16 @@
 
     .client__review {
         width: var(--container-width-sm);
+    }
+
+    #testimonials > h5 {
+        margin: 0;
+        text-align: center;
+    }
+    
+    #testimonials > h2 {
+        margin: 0 0 2rem 0;
+        text-align: center;
+        font-size: 2rem;
     }
  }

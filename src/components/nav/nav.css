@@ -19,11 +19,12 @@ nav a {
     padding: 0.9rem;
     border-radius: 50%;
     display: flex;
-    color: var(--color-light);
+    color: #fff;
     font-size: 1.1rem;
 }
 
 nav a:hover {
+    color: #fff;
     background: rgba(0, 0, 0, 0.3);
 }
 

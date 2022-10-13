@@ -5,6 +5,23 @@
     gap: 12%;
 }
 
+#contact > h5 {
+    margin-left: 171px;
+    margin-right: 171px;
+    text-align: center;
+    color: var(--color-h5);
+    font-size: 1rem;
+    margin-bottom: -10px;
+}
+
+#contact > h2 {
+    margin-left: 171px;
+    margin-right: 171px;
+    text-align: center;
+    color: var(--color-h2);
+    font-size: 3rem;
+}
+
 .contact__options {
     display: flex;
     flex-direction: column;
@@ -12,28 +29,49 @@
 }
 
 .contact__option {
-    background: var(--color-bg-variant);
     padding: 1.2rem;
     border-radius: 1.2rem;
     text-align: center;
     border: 1px solid transparent;
     transition: var(--transition);
+    box-shadow: 2px 2px 8px #d1d0d0,
+                -1px -1px 8px #fff;
+}
+
+.contact__option > h4 {
+    margin-top: -5px;
+    color: var(--color-bg-button);
+}
+
+.contact__option > h5 {
+    font-size: 0.8rem;
+    color: var(--color-text-bright);
 }
 
 .contact__option:hover {
     background: transparent;
-    border-color: var(--color-primary-variant);
 }
 
 .contact__option-icon {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: var(--color-bg-button);
 }
 
 .contact__option a {
     margin-top: 0.7rem;
     display: inline-block;
     font-size: 0.8rem;
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.contact__option a:hover {
+    color: var(--color-bg-button);
+}
+
+::placeholder {
+    color: var(--color-text-p);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*================= FORM =====================*/
@@ -50,15 +88,15 @@ textarea {
     padding: 1.2rem;
     border-radius: 0.5rem;
     background: transparent;
-    border: 2px solid var(--color-primary-variant);
     resize: none;
     color: var(--color-white);
+    box-shadow: 3px 3px 8px #d1d0d0 inset,
+                -1px -1px 8px #fff inset;
 }
 
 /*================= TOAST NOTIF =====================*/
 .toast-message {
-    background: var(--color-bg-variant);
-    color: var(--color-white);
+    color: var(--color-text-button);
     font-size: 0.7rem;
     border-radius: 0.5rem;
 }
@@ -80,6 +118,17 @@ textarea {
 
     .toast-message {
         margin: 1rem 2rem;
+    }
+
+    #contact > h5 {
+        margin: 0;
+        text-align: center;
+    }
+    
+    #contact > h2 {
+        margin: 0 0 2rem 0;
+        text-align: center;
+        font-size: 2rem;
     }
 
  }
