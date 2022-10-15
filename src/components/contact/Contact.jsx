@@ -7,9 +7,12 @@ import { useRef } from 'react';
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { motion } from 'framer-motion'
+import { contactOptionsAnimation, contactFormAnimation, centerHeaderAnimation } from '../../animations'
+import { useScroll } from '../useScroll'
 
 const Contact = () => {
+  const [element, controls] = useScroll();
   const form = useRef(); 
 
   const sendEmail = (e) => {
@@ -29,12 +32,33 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact'>
-      <h5>Get in touch</h5>
-      <h2>Contact Me</h2>
+    <section id='contact' ref={element}>
+      <motion.h5
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>Get in touch</motion.h5>
+      <motion.h2
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>Contact Me</motion.h2>
 
       <div className="container contact__container">
-        <div className="contact__options">
+        <motion.div className="contact__options"
+        variants={contactOptionsAnimation}
+        animate={controls}
+        transition={{
+          delay: 0.4,
+          duration: 0.6,
+          type: 'tween'
+        }}>
           <article className="contact__option">
             <MdOutlineEmail className='contact__option-icon'/>
             <h4>Email</h4>
@@ -53,15 +77,23 @@ const Contact = () => {
             <h5>sonzuuu#0425</h5>
             <a href='https://discord.com' target='_blank'>Send a message.</a>
           </article>
-        </div>
+        </motion.div>
+
         {/* END OF CONTACT OPTIONS */}
-        <form ref={form} onSubmit={sendEmail} >
+        <motion.form ref={form} onSubmit={sendEmail} 
+        variants={contactFormAnimation}
+        animate={controls}
+        transition={{
+          delay: 0.4,
+          duration: 0.6,
+          type: 'tween'
+        }}>
           <input type="text" name='name' placeholder='Your full name' required />
           <input type='email' name='email' placeholder='Your Email' />
           <textarea name="message" rows="7" placeholder='Your Message' required></textarea>
           <button type='submit' className='btn btn-primary'>Send Message</button>
           <ToastContainer />
-        </form>
+        </motion.form>
       </div>
     </section>
   )

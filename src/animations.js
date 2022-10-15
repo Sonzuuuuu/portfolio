@@ -16,7 +16,7 @@ export const rightHeaderAnimation = {
 export const centerHeaderAnimation = {
     hidden: { y: 100, opacity: 0 },
     show: { y:0, opacity: 1 }, /* fade from bottom to top */
-}
+};
 
 export const leftHeaderAnimation = {
     hidden: { x: -400, opacity: 0 }, /* fade from right to left */
@@ -57,3 +57,25 @@ export const portfolioCardsAnimation = {
     hidden: { scale: 0, opacity: 0 }, /* scale from 0 to 1 */
     show: { scale:1, opacity: 1 },
 };
+
+export const testimonialsAnimation = {
+    hidden: { y: 100, opacity: 0 },
+    show: { y:0, opacity: 1 }, /* fade from bottom to top */
+};
+
+export const contactFormAnimation = {
+    hidden: { x: 200, opacity: 0 },
+    show: { x:0, opacity: 1 }, /* fade from right to left */
+};
+
+export const contactOptionsAnimation = {
+    hidden: { x: -400, opacity: 0 },
+    show: { x:0, opacity: 1 }, /* fade from left to right */
+};
+
+export const footerAnimation = {
+    hidden: { y: -400, opacity: 0 },
+    show: { y:0, opacity: 1 }, /* fade from bottom to top */
+};
+
+

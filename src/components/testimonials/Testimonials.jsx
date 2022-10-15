@@ -8,7 +8,7 @@ import AVTR4 from '../../assets/avatar4.jpg'
 import {Pagination} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion'
-import { testimonialsAnimation, centerHeaderAnimation } from '../../animations'
+import { testimonialsAnimation } from '../../animations'
 import { useScroll } from '../useScroll'
 
 // Import Swiper styles 
@@ -45,7 +45,7 @@ const Testimonials = () => {
   const [element, controls] = useScroll();
   return (
     <motion.section id='testimonials' ref={element}
-      variants={centerHeaderAnimation}
+      variants={testimonialsAnimation}
       animate={controls}
       transition={{
         delay: 0.4,
