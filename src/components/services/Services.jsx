@@ -1,14 +1,39 @@
 import React from 'react'
 import './services.css'
 import {BiCheck} from 'react-icons/bi'
+import { motion } from 'framer-motion'
+import { centerHeaderAnimation, servicesAnimation } from '../../animations'
+import { useScroll } from '../useScroll'
 
 const Services = () => {
+  const [element, controls] = useScroll();
   return (
-    <section id='services'>
-      <h5>What I offer</h5>
-      <h2>Services</h2>
+    <section id='services' ref={element}>
+      <motion.h5
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.3,
+        duration: 0.6,
+        type: 'tween'
+      }}>What I offer</motion.h5>
+      <motion.h2
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.3,
+        duration: 0.6,
+        type: 'tween'
+      }}>Services</motion.h2>
 
-      <div className="container services__container">
+      <motion.div className="container services__container"
+      variants={servicesAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.5,
+        duration: 0.6,
+        type: 'tween'
+      }}>
         <article className="service">
           <div className="service__head">
             <h3>Social Media Management</h3>
@@ -106,7 +131,7 @@ const Services = () => {
           </ul>
         </article>
         {/* END OF CONTENT CREATION */}
-      </div>
+      </motion.div>
     </section>
   )
 }

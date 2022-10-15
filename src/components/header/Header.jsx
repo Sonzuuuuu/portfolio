@@ -2,11 +2,20 @@ import React from 'react'
 import './header.css'
 import ME from '../../assets/me1.png'
 import HeaderSocials from './HeaderSocials'
+import { motion } from 'framer-motion';
+import { headerAnimation, headerImageAnimation } from '../../animations';
 
 const Header = () => {
   return (
     <header>
-      <div className="container header__container">
+      <motion.div className="container header__container"
+        variants={headerAnimation}
+        transition={{
+          delay:0.3, 
+          duration:0.8, 
+          type:"tween"
+        }}>
+          
         <div className="header__content">
           <h1 className='name'>Alberson<br></br>Alejandrino</h1>
           <div className="subheading">
@@ -17,11 +26,16 @@ const Header = () => {
           <HeaderSocials />
         </div>
 
-        <div className="me">
+        <motion.div className="me" variants={headerImageAnimation}
+        transition={{
+          delay:0.3, 
+          duration:0.8, 
+          type:"tween"
+        }}>
           <img src={ME} alt="me" />
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
     </header>
   )
 }

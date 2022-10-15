@@ -12,6 +12,7 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 import './index.css'
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 export const ThemeContext = createContext(null);
 
@@ -24,8 +25,7 @@ const App = () => {
   }
 
   return (
-      <div className='app' data-theme={theme}>
-        <>
+      <motion.div initial="hidden" animate="show"/*className='app' data-theme={theme}*/>
             <Header />
             <Nav />
             <About />
@@ -38,8 +38,7 @@ const App = () => {
             {/*<div className="switch">
               <ReactSwitch onChange={switchTheme}/>
             </div>*/}
-        </>
-      </div>
+      </motion.div>
   )
 }
 

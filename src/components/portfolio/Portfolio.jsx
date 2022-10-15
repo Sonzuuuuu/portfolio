@@ -6,6 +6,9 @@ import IMG3 from '../../assets/thejmag.JPG'
 import IMG4 from '../../assets/portfolio4.jpg'
 import IMG5 from '../../assets/portfolio5.png'
 import IMG6 from '../../assets/portfolio6.jpg'
+import { motion } from 'framer-motion'
+import { portfolioCardsAnimation, centerHeaderAnimation } from '../../animations'
+import { useScroll } from '../useScroll'
 
 const data = [
   {
@@ -60,12 +63,34 @@ const data = [
 ]
 
 const Portfolio = () => {
+  const [element, controls] = useScroll();
   return (
-    <section id='portfolio'>
-      <h5>My Recent Achievements</h5>
-      <h2>Portfolio</h2>
+    <section id='portfolio' ref={element}>
+      <motion.h5
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>My Recent Achievements</motion.h5>
+      <motion.h2
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>Portfolio</motion.h2>
 
-      <div className="container portfolio__container">
+      <motion.div className="container portfolio__container"
+      variants={portfolioCardsAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>
         {
           data.map(({id, image, title, github, imglink, text}) => {
             return (
@@ -81,7 +106,7 @@ const Portfolio = () => {
             )
           })
         }
-      </div>
+      </motion.div>
     </section>
   )
 }

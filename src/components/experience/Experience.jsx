@@ -1,14 +1,41 @@
 import React from 'react'
 import './experience.css'
 import {BsPatchCheckFill} from 'react-icons/bs'
+import { motion } from 'framer-motion'
+import { leftHeaderAnimation, experienceCardsAnimation } from '../../animations'
+import { useScroll } from '../useScroll'
 
 const Experience = () => {
+  const [element, controls] = useScroll();
   return (
-    <section id='experience'>
-      <h5>What skills I have</h5>
-      <h2>My Experience</h2>
+    <section id='experience' ref={element}>
+      <motion.h5
+      variants={leftHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}
+      >What skills I have</motion.h5>
+      <motion.h2
+      variants={leftHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.3,
+        duration: 0.6,
+        type: 'tween'
+      }}
+      >My Experience</motion.h2>
 
-      <div className='container experience__container'>
+      <motion.div className='container experience__container'
+      variants={experienceCardsAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.3,
+        duration: 0.6,
+        type: 'tween'
+      }}>
 
         <div className='experience__frontend'>
           <h3>Frontend Development</h3>
@@ -104,6 +131,7 @@ const Experience = () => {
         {/*END OF BACKEND */}
 
         <div className='experience__management'>
+
           <h3>Social Media Management</h3>
           <div className='experience__content'>
             <article className='experience__details'>
@@ -146,6 +174,7 @@ const Experience = () => {
         {/* END OF MANAGEMENT */}
 
         <div className='experience__designer'>
+
           <h3>Graphic Design</h3>
           <div className='experience__content'>
             <article className='experience__details'>
@@ -186,7 +215,7 @@ const Experience = () => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

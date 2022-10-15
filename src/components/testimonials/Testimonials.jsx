@@ -6,8 +6,10 @@ import AVTR3 from '../../assets/avatar3.jpg'
 import AVTR4 from '../../assets/avatar4.jpg'
 // import Swiper core and required modules
 import {Pagination} from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from 'framer-motion'
+import { testimonialsAnimation, centerHeaderAnimation } from '../../animations'
+import { useScroll } from '../useScroll'
 
 // Import Swiper styles 
 import 'swiper/css';
@@ -40,8 +42,16 @@ const data = [
 ]
 
 const Testimonials = () => {
+  const [element, controls] = useScroll();
   return (
-    <section id='testimonials'>
+    <motion.section id='testimonials' ref={element}
+      variants={centerHeaderAnimation}
+      animate={controls}
+      transition={{
+        delay: 0.4,
+        duration: 0.6,
+        type: 'tween'
+      }}>
       <h5>Review from clients</h5>
       <h2>Testimonials</h2>
 
@@ -66,7 +76,7 @@ const Testimonials = () => {
           })
         }      
       </Swiper>
-    </section>
+    </motion.section>
   )
 }
 
