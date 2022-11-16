@@ -23,7 +23,7 @@ const App = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme)
   }
-
+  
   return (
       <motion.div initial="hidden" animate="show"/*className='app' data-theme={theme}*/>
             <Header />
